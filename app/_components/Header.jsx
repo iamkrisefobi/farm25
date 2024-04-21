@@ -11,19 +11,17 @@ function MobileMenu({ isOpen, toggleMenu }) {
   return (
     <>
       {isOpen && (
-        <div className="bg-primary text-white">
-          {/* Conditional rendering based on isOpen state */}{" "}
-          <ul className="text-lg text-left shadow-lg px-4 py-2">
-            {navItem.map((item) => (
-              <li
-                className="cursor-pointer hover:text-xl hover:bg-white hover:text-primary hover:border-t-primary hover:border"
-                key={item.id}
-              >
-                <a href={item.link}>{item.title}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        /* Conditional rendering based on isOpen state */
+        <ul className="bg-primary text-white text-lg text-center shadow-lg ">
+          {navItem.map((item) => (
+            <li
+              className="cursor-pointer pt-2 hover:text-xl hover:bg-white hover:text-primary  hover:border hover:px-2"
+              key={item.id}
+            >
+              <a href={item.link}>{item.title}</a>
+            </li>
+          ))}
+        </ul>
       )}
     </>
   );
