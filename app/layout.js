@@ -1,6 +1,9 @@
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "./_components/Header";
+import Hero from "./_components/Hero";
+import Test from "./_components/Test";
+import About from "./_components/About";
 
 const defaultFont = Outfit({ subsets: ["latin"] });
 
@@ -15,6 +18,8 @@ export default function RootLayout({ children }) {
       <body className={defaultFont.className}>
         {/* <div class="container"> */}
         <Header />
+        <Hero />
+        <About />
         {children}
         {/* </div> */}
       </body>

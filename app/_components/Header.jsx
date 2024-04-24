@@ -12,10 +12,10 @@ function MobileMenu({ isOpen, toggleMenu }) {
     <>
       {isOpen && (
         /* Conditional rendering based on isOpen state */
-        <ul className="bg-primary text-white text-lg text-center shadow-lg ">
+        <ul className="absolute mx-auto right-0 left-0 bg-white text-primary text-lg text-center shadow-lg  ">
           {navItem.map((item) => (
             <li
-              className="cursor-pointer pt-2 hover:text-xl hover:bg-white hover:text-primary  hover:border hover:px-2"
+              className="cursor-pointer pt-2 hover:text-xl hover:bg-white hover:text-primary hover:border hover:px-2"
               key={item.id}
             >
               <a href={item.link}>{item.title}</a>
@@ -38,7 +38,7 @@ function Header() {
   };
 
   return (
-    <header className="">
+    <header className="inset-x-0 top-0 z-50">
       <nav className="flex items-center justify-between shadow-lg px-4 h-20 bg-white">
         {" "}
         {/* Navigation container */}
