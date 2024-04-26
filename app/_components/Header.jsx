@@ -2,9 +2,25 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { LogIn, Menu, Search, ShoppingCart, X } from "lucide-react";
+import {
+  ArrowDown,
+  LayoutGrid,
+  LogIn,
+  Menu,
+  Search,
+  ShoppingCart,
+  X,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { navItem } from "../constants";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 // MobileMenu component for rendering mobile menu items
 function MobileMenu({ isOpen, toggleMenu }) {
@@ -65,23 +81,40 @@ function Header() {
             <div>
               {!isOpen ? (
                 <Menu
-                  className="lg:hidden h-6 w-6 cursor-pointer text-gray-600 hover:text-gray-900"
+                  className="lg:hidden h-6 w-6 cursor-pointer text-secondary hover:text-gray-900"
                   onClick={toggleMenu}
                 />
               ) : (
                 <X
-                  className="lg:hidden h-6 w-6 cursor-pointer text-gray-600 hover:text-gray-900"
+                  className="lg:hidden h-6 w-6 cursor-pointer text-secondary hover:text-gray-900"
                   onClick={toggleMenu}
                 />
               )}
             </div>
+            {/* Category component for Mobile view */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <div className="lg:hidden">
+                  <LayoutGrid className="h-6 w-6 cursor-pointer text-secondary hover:text-gray-900" />
+                </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-primary text-white">
+                <DropdownMenuLabel>Browse Categories</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Production</DropdownMenuItem>
+                <DropdownMenuItem>Aggregation</DropdownMenuItem>
+                <DropdownMenuItem>Manufacturing</DropdownMenuItem>
+                <DropdownMenuItem>Procurement</DropdownMenuItem>
+                <DropdownMenuItem>Distribution</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             {/* Search component for Mobile view */}
             <div className="md:hidden">
-              <Search className="h-6 w-6 cursor-pointer text-gray-600 hover:text-gray-900" />
+              <Search className="h-6 w-6 cursor-pointer text-secondary hover:text-gray-900" />
             </div>
             {/* Search component for Desktop view */}
             <div className="hidden md:flex gap-3 items-center border rounded-full p-2 px-3">
-              <Search className="h-6 w-6 cursor-pointer text-gray-600 hover:text-gray-900" />
+              <Search className="h-6 w-6 cursor-pointer text-secondary hover:text-gray-900" />
               <input
                 type="text"
                 placeholder="Search..."
@@ -90,7 +123,7 @@ function Header() {
             </div>
             {/* Shopping Cart component */}
             <div className="flex relative cursor-pointer">
-              <ShoppingCart className="h-6 w-6 text-gray-600 hover:text-gray-900" />
+              <ShoppingCart className="h-6 w-6 text-secodary hover:text-gray-900" />
               <span className="absolute h-4 w-4 top-0 right-0 flex items-center justify-center bg-red-500 text-white rounded-full text-xs">
                 2
               </span>
@@ -98,7 +131,7 @@ function Header() {
           </div>
           {/* Login icon for mobile */}
           <div className="flex md:hidden">
-            <LogIn className="md:hidden h-6 w-6 cursor-pointer text-gray-600 hover:text-gray-900" />
+            <LogIn className="md:hidden h-6 w-6 cursor-pointer text-secondary hover:text-gray-900" />
           </div>
           {/* Login and Register buttons for Desktop view */}
           <div className="hidden md:flex gap-2">
