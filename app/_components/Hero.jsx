@@ -36,7 +36,13 @@ function Hero() {
               {/* Call to action buttons */}
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <Button>Get Started</Button>
-                <DropdownMenu>
+                <Button
+                  className="outline-primary outline-4 hover:bg-primary text-gray-900 hover:text-white"
+                  variant="outline"
+                >
+                  Learn More
+                </Button>
+                {/* <DropdownMenu>
                   <DropdownMenuTrigger>
                     <a
                       href="#"
@@ -57,7 +63,7 @@ function Hero() {
                     <DropdownMenuItem>Procurement</DropdownMenuItem>
                     <DropdownMenuItem>Distribution</DropdownMenuItem>
                   </DropdownMenuContent>
-                </DropdownMenu>
+                </DropdownMenu> */}
               </div>
             </div>
           </div>

@@ -135,9 +135,9 @@ function Header() {
           </div>
           {/* Login and Register buttons for Desktop view */}
           <div className="hidden md:flex gap-2">
-            <Button className="cursor-pointer">Login</Button>
+            <Button>Login</Button>
             <Button
-              className="cursor-pointer outline-primary outline-4 hover:bg-primary hover:text-white"
+              className="outline-primary outline-4 hover:bg-primary hover:text-white"
               variant="outline"
             >
               Register
